@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>코스피 7000 돌파 | 앞으로 12배 더 오를 주식 TOP 5</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --surface2: #f0f2f5;
+    --border: #e4e7ec;
+    --text: #111827;
+    --text-sub: #4b5563;
+    --text-muted: #9ca3af;
+    --accent-blue: #2563eb;
+    --accent-blue-light: #eff6ff;
+    --accent-orange: #ea580c;
+    --accent-orange-light: #fff7ed;
+    --accent-green: #16a34a;
+    --accent-green-light: #f0fdf4;
+    --accent-red: #dc2626;
+    --accent-red-light: #fef2f2;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --shadow: 0 2px 12px rgba(0,0,0,0.07);
+    --shadow-hover: 0 8px 32px rgba(0,0,0,0.13);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Pretendard', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    word-break: keep-all;
+    overflow-x: hidden;
+  }
+
+  /* ── Instagram CTA ── */
+  .insta-cta {
+    background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #fff;
+    text-align: center;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: clamp(13px, 3vw, 15px);
+    letter-spacing: -0.2px;
+    transition: opacity 0.2s;
+  }
+  .insta-cta:hover { opacity: 0.93; }
+  .insta-cta svg { flex-shrink: 0; }
+  .insta-cta span { display: inline-flex; align-items: center; gap: 6px; }
+
+  /* ── Hero ── */
+  .hero {
+    background: linear-gradient(160deg, #0f172a 0%, #1e3a5f 60%, #1d4ed8 100%);
+    color: #fff;
+    padding: clamp(48px, 8vw, 80px) 20px clamp(40px, 6vw, 64px);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 70% 30%, rgba(99,179,237,0.12) 0%, transparent 60%),
+                radial-gradient(ellipse at 20% 80%, rgba(245,158,11,0.08) 0%, transparent 50%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 999px;
+    padding: 6px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    backdrop-filter: blur(8px);
+  }
+  .hero h1 {
+    font-size: clamp(28px, 6vw, 54px);
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+  }
+  .hero h1 .highlight {
+    background: linear-gradient(90deg, #fbbf24, #f97316);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: clamp(14px, 3vw, 18px);
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 40px;
+  }
+
+  /* ── Stat Cards ── */
+  .stat-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+  @media(min-width: 600px) { .stat-grid { grid-template-columns: repeat(4, 1fr); } }
+  .stat-card {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: var(--radius-sm);
+    padding: 18px 14px;
+    backdrop-filter: blur(12px);
+    text-align: center;
+  }
+  .stat-card .label { font-size: 11px; color: rgba(255,255,255,0.65); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+  .stat-card .value { font-size: clamp(18px, 4vw, 24px); font-weight: 900; color: #fff; line-height: 1.1; }
+  .stat-card .value.up { color: #fbbf24; }
+
+  /* ── Section ── */
+  .section { padding: clamp(40px, 8vw, 72px) 20px; max-width: 1100px; margin: 0 auto; }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--accent-blue);
+    margin-bottom: 10px;
+  }
+  .section-title {
+    font-size: clamp(22px, 5vw, 36px);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+    line-height: 1.25;
+  }
+  .section-desc {
+    font-size: clamp(14px, 2.5vw, 16px);
+    color: var(--text-sub);
+    margin-bottom: 36px;
+  }
+
+  /* ── Sector Header ── */
+  .sector-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 48px 0 24px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--border);
+  }
+  .sector-dot {
+    width: 14px; height: 14px; border-radius: 50%; flex-shrink: 0;
+  }
+  .sector-dot.blue { background: var(--accent-blue); }
+  .sector-dot.orange { background: var(--accent-orange); }
+  .sector-dot.green { background: var(--accent-green); }
+  .sector-header h2 {
+    font-size: clamp(17px, 3.5vw, 22px);
+    font-weight: 800;
+    letter-spacing: -0.3px;
+  }
+  .sector-header .sector-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+  }
+  .sector-tag.blue { background: var(--accent-blue-light); color: var(--accent-blue); }
+  .sector-tag.orange { background: var(--accent-orange-light); color: var(--accent-orange); }
+  .sector-tag.green { background: var(--accent-green-light); color: var(--accent-green); }
+
+  /* ── Stock Card ── */
+  .stock-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.25s, transform 0.25s;
+  }
+  .stock-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+
+  .stock-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .stock-num {
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-muted);
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .stock-name {
+    font-size: clamp(18px, 4vw, 24px);
+    font-weight: 900;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  .stock-ticker {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-muted);
+    margin-top: 3px;
+  }
+  .price-badge {
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .price-badge .price {
+    font-size: clamp(18px, 3.5vw, 22px);
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1;
+  }
+  .price-badge .change {
+    display: inline-block;
+    margin-top: 5px;
+    background: var(--accent-red-light);
+    color: var(--accent-red);
+    font-size: 13px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 999px;
+  }
+
+  .stock-desc {
+    font-size: clamp(13px, 2.5vw, 15px);
+    color: var(--text-sub);
+    background: var(--surface2);
+    border-radius: var(--radius-sm);
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--border);
+  }
+
+  .points-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .points-list { list-style: none; display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+  .points-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: clamp(13px, 2.5vw, 14px);
+    color: var(--text-sub);
+    line-height: 1.6;
+  }
+  .points-list li::before {
+    content: '✅';
+    font-size: 14px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .stock-info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  @media(min-width: 600px) { .stock-info-grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .info-block {
+    border-radius: var(--radius-sm);
+    padding: 14px 16px;
+  }
+  .info-block.timing { background: #fff8f0; border: 1px solid #fde8c8; }
+  .info-block.outlook { background: #f0f9ff; border: 1px solid #bae0fd; }
+  .info-block.trend { background: #f7f3ff; border: 1px solid #e0d5fd; }
+  .info-block-label {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+  .timing .info-block-label { color: #c2410c; }
+  .outlook .info-block-label { color: #0369a1; }
+  .trend .info-block-label { color: #7c3aed; }
+  .info-block p { font-size: clamp(12px, 2.2vw, 13px); color: var(--text-sub); line-height: 1.6; }
+
+  /* ── Summary Table ── */
+  .table-wrap {
+    overflow-x: auto;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    -webkit-overflow-scrolling: touch;
+  }
+  table {
+    width: 100%;
+    min-width: 580px;
+    border-collapse: collapse;
+    background: var(--surface);
+    font-size: clamp(12px, 2.2vw, 14px);
+  }
+  thead { background: #0f172a; color: #fff; }
+  thead th {
+    padding: 14px 18px;
+    font-weight: 700;
+    text-align: left;
+    white-space: nowrap;
+    font-size: 13px;
+    letter-spacing: 0.3px;
+  }
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.15s; }
+  tbody tr:last-child { border-bottom: none; }
+  tbody tr:hover { background: var(--surface2); }
+  tbody td { padding: 14px 18px; color: var(--text-sub); vertical-align: middle; }
+  tbody td:first-child { font-weight: 700; color: var(--text); }
+  .tag-blue { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; background: var(--accent-blue-light); color: var(--accent-blue); }
+  .tag-orange { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; background: var(--accent-orange-light); color: var(--accent-orange); }
+  .tag-green { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 700; background: var(--accent-green-light); color: var(--accent-green); }
+  .up-text { color: var(--accent-red); font-weight: 800; }
+
+  /* ── Tips ── */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  @media(min-width: 560px) { .tips-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media(min-width: 900px) { .tips-grid { grid-template-columns: repeat(4, 1fr); } }
+
+  .tip-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 20px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+  .tip-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-2px); }
+  .tip-icon { font-size: 28px; margin-bottom: 12px; }
+  .tip-card h3 { font-size: 15px; font-weight: 800; margin-bottom: 8px; letter-spacing: -0.2px; }
+  .tip-card p { font-size: 13px; color: var(--text-sub); line-height: 1.65; }
+
+  /* ── Checklist ── */
+  .checklist {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    box-shadow: var(--shadow);
+  }
+  .checklist-title { font-size: 18px; font-weight: 800; margin-bottom: 20px; }
+  .checklist ul { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+  .checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: clamp(13px, 2.5vw, 15px);
+    color: var(--text-sub);
+    line-height: 1.6;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .checklist li:last-child { border-bottom: none; padding-bottom: 0; }
+  .checklist li .check-box {
+    width: 22px; height: 22px;
+    border: 2px solid var(--border);
+    border-radius: 6px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    background: var(--surface2);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .checklist li .check-box:hover { border-color: var(--accent-blue); background: var(--accent-blue-light); }
+  .checklist li .check-box.checked { background: var(--accent-blue); border-color: var(--accent-blue); }
+  .checklist li .check-box.checked::after { content: '✓'; color: #fff; font-size: 14px; font-weight: 700; }
+
+  /* ── FAQ ── */
+  .faq-list { display: flex; flex-direction: column; gap: 12px; }
+  .faq-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .faq-q {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: clamp(13px, 2.5vw, 15px);
+    user-select: none;
+    transition: background 0.15s;
+    min-height: 56px;
+  }
+  .faq-q:hover { background: var(--surface2); }
+  .faq-q .q-text { display: flex; align-items: center; gap: 10px; }
+  .faq-q .q-badge { font-size: 13px; font-weight: 900; color: var(--accent-blue); flex-shrink: 0; }
+  .faq-arrow {
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    background: var(--surface2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px;
+    flex-shrink: 0;
+    transition: transform 0.25s, background 0.2s;
+  }
+  .faq-item.open .faq-arrow { transform: rotate(180deg); background: var(--accent-blue-light); }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease, padding 0.25s;
+    padding: 0 22px;
+    font-size: clamp(13px, 2.2vw, 14px);
+    color: var(--text-sub);
+    line-height: 1.75;
+    border-top: 0px solid var(--border);
+  }
+  .faq-item.open .faq-a {
+    max-height: 400px;
+    padding: 16px 22px 20px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── Disclaimer ── */
+  .disclaimer {
+    background: #fffbeb;
+    border: 1px solid #fde68a;
+    border-radius: var(--radius);
+    padding: 20px 24px;
+    display: flex;
+    gap: 14px;
+    font-size: 13px;
+    color: #92400e;
+    line-height: 1.7;
+    margin-top: 48px;
+  }
+  .disclaimer-icon { font-size: 20px; flex-shrink: 0; }
+
+  /* ── Footer ── */
+  footer {
+    background: #0f172a;
+    color: rgba(255,255,255,0.5);
+    text-align: center;
+    padding: 32px 20px;
+    font-size: 13px;
+    line-height: 1.8;
+  }
+  footer strong { color: rgba(255,255,255,0.85); }
+
+  /* ── Divider ── */
+  .divider { height: 1px; background: var(--border); max-width: 1100px; margin: 0 auto; }
+
+  /* ── Scroll to top ── */
+  .back-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-sub);
+    cursor: pointer;
+    margin-top: 32px;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s;
+  }
+  .back-top:hover { box-shadow: var(--shadow-hover); color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- ① Instagram CTA (상단) -->
+<a href="https://www.instagram.com/startup_tip_" target="_blank" rel="noopener" class="insta-cta">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="1.8"/>
+    <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8"/>
+    <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+  </svg>
+  <span>더 많은 꿀정보 얻고 싶다면? &nbsp;@startup_tip_ &nbsp;▶</span>
+</a>
+
+<!-- ── Hero ── -->
+<section class="hero">
+  <div class="hero-badge">📈 2026년 상반기 투자 분석 리포트</div>
+  <h1>코스피 <span class="highlight">7,000</span> 돌파<br>앞으로 <span class="highlight">12배</span> 더 오를 주식 TOP 5</h1>
+  <p class="hero-sub">반도체 슈퍼사이클 · AI 전력 인프라 · 원전/SMR — 세 가지 메가트렌드</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="label">분석 기준일</div>
+      <div class="value">2026.05.11</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">추천 종목 수</div>
+      <div class="value up">5개</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">국내 / 미국</div>
+      <div class="value">3 / 2</div>
+    </div>
+    <div class="stat-card">
+      <div class="label">핵심 섹터</div>
+      <div class="value" style="font-size:16px; line-height:1.3">반도체·전력·원전</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 종목 요약 테이블 ── -->
+<div class="section">
+  <div class="section-label">📊 한눈에 보기</div>
+  <h2 class="section-title">종목 요약</h2>
+  <p class="section-desc">5개 종목의 섹터, 현재 주가, 핵심 포인트를 한 곳에서 확인하세요.</p>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>종목명</th>
+          <th>섹터</th>
+          <th>현재 주가 <span style="font-weight:400;font-size:11px;opacity:0.7">(26.05.11 기준)</span></th>
+          <th>전일 대비</th>
+          <th>핵심 포인트</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01</td>
+          <td>심텍<br><span style="font-size:12px;color:var(--text-muted);font-weight:400">Simmtech</span></td>
+          <td><span class="tag-blue">반도체 슈퍼사이클</span></td>
+          <td><strong>93,800원</strong></td>
+          <td class="up-text">+6.35%</td>
+          <td>DDR5·AI 메모리 기판, SoCAMM 선점</td>
+        </tr>
+        <tr>
+          <td>02</td>
+          <td>마벨 테크놀로지<br><span style="font-size:12px;color:var(--text-muted);font-weight:400">MRVL 🇺🇸</span></td>
+          <td><span class="tag-blue">반도체 슈퍼사이클</span></td>
+          <td><strong>$170.13</strong></td>
+          <td class="up-text">+6.32%</td>
+          <td>광통신칩·커스텀 AI칩 핵심 파트너</td>
+        </tr>
+        <tr>
+          <td>03</td>
+          <td>효성중공업<br><span style="font-size:12px;color:var(--text-muted);font-weight:400">Hyosung Heavy</span></td>
+          <td><span class="tag-orange">AI 전력 인프라</span></td>
+          <td><strong>4,398,000원</strong></td>
+          <td style="color:var(--accent-blue);font-weight:700">-4.41%</td>
+          <td>초고압 변압기 세계 1위, 미국 수주 역대급</td>
+        </tr>
+        <tr>
+          <td>04</td>
+          <td>버티브 홀딩스<br><span style="font-size:12px;color:var(--text-muted);font-weight:400">VRT 🇺🇸</span></td>
+          <td><span class="tag-orange">AI 전력 인프라</span></td>
+          <td><strong>$339.85</strong></td>
+          <td style="color:var(--accent-blue);font-weight:700">-2.56%</td>
+          <td>AI 데이터센터 냉각 글로벌 1위</td>
+        </tr>
+        <tr>
+          <td>05</td>
+          <td>비에이치아이<br><span style="font-size:12px;color:var(--text-muted);font-weight:400">BHI</span></td>
+          <td><span class="tag-green">원전 / SMR</span></td>
+          <td><strong>94,700원</strong></td>
+          <td class="up-text">+1.61%</td>
+          <td>HRSG 세계 1위, SMR 보조기기 선점</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── 종목 상세 ── -->
+<div class="section">
+  <div class="section-label">🔍 종목 상세 분석</div>
+  <h2 class="section-title">5개 종목 심층 분석</h2>
+  <p class="section-desc">각 종목의 사업 개요, 투자 포인트, 진입 타이밍, 전문가 전망을 상세히 확인하세요.</p>
+
+  <!-- 🔵 반도체 슈퍼사이클 -->
+  <div class="sector-header">
+    <div class="sector-dot blue"></div>
+    <h2>반도체 슈퍼사이클</h2>
+    <span class="sector-tag blue">Semiconductor</span>
+  </div>
+
+  <!-- 심텍 -->
+  <div class="stock-card">
+    <div class="stock-header">
+      <div>
+        <div class="stock-num">NO.01</div>
+        <div class="stock-name">심텍</div>
+        <div class="stock-ticker">Simmtech · KOSPI</div>
+      </div>
+      <div class="price-badge">
+        <div class="price">93,800원</div>
+        <span class="change" style="font-size:11px;color:var(--text-muted);display:block;text-align:right;margin-top:3px;margin-bottom:2px">26.05.11 기준</span>
+        <span class="change">▲ +6.35%</span>
+      </div>
+    </div>
+    <div class="stock-desc">
+      반도체 패키지용 PCB(인쇄회로기판) 분야 글로벌 1위 기업. 삼성전자·SK하이닉스가 주요 고객사이며, AI 서버와 고성능 메모리 기판으로 체질 개선을 완료한 상태입니다.
+    </div>
+    <div class="points-title">💡 투자 포인트</div>
+    <ul class="points-list">
+      <li>DDR5 및 AI 메모리 확산 수혜 — 차세대 메모리 규격 DDR5와 서버용 고성능 기판(MSAP) 매출 비중이 급격히 늘고 있습니다.</li>
+      <li>실적 턴어라운드 완성 — 2025년 흑자 전환 이후 2026년 상반기에만 영업이익 약 500억 원 기대. '이익 성장의 원년' 진입</li>
+      <li>차세대 폼팩터 'SoCAMM' 선점 — 슬림 노트북·AI PC용 차세대 메모리 모듈 시장을 선도 중</li>
+    </ul>
+    <div class="stock-info-grid">
+      <div class="info-block trend">
+        <div class="info-block-label">📊 주가 흐름</div>
+        <p>기관 5일 연속 순매수, 52주 최고가 돌파 시도. 강력한 우상향 패턴 형성 중</p>
+      </div>
+      <div class="info-block timing">
+        <div class="info-block-label">⏰ 진입 타이밍</div>
+        <p>전고점 돌파 시 추격 매수 유효. 눌림목은 8만 원 중반대 비중 확대 전략</p>
+      </div>
+      <div class="info-block outlook">
+        <div class="info-block-label">🎯 전문가 전망</div>
+        <p>2026년 연간 영업이익 1,300억 원대 전망. MSAP 비중 확대로 마진율 개선 기대</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 마벨 -->
+  <div class="stock-card">
+    <div class="stock-header">
+      <div>
+        <div class="stock-num">NO.02</div>
+        <div class="stock-name">마벨 테크놀로지 🇺🇸</div>
+        <div class="stock-ticker">Marvell Technology · MRVL · NASDAQ</div>
+      </div>
+      <div class="price-badge">
+        <div class="price">$170.13</div>
+        <span class="change" style="font-size:11px;color:var(--text-muted);display:block;text-align:right;margin-top:3px;margin-bottom:2px">26.05.11 기준</span>
+        <span class="change">▲ +6.32%</span>
+      </div>
+    </div>
+    <div class="stock-desc">
+      빛의 속도로 데이터를 주고받는 광통신 칩의 강자. 클라우드 기업들이 커스텀 AI 칩을 만들 때 마벨의 설계 자산이 핵심적인 역할을 합니다. AI 클러스터 내부의 데이터 병목현상을 해결하는 네트워킹·인터커넥트 분야의 숨은 강자입니다.
+    </div>
+    <div class="points-title">💡 투자 포인트</div>
+    <ul class="points-list">
+      <li>빅테크 커스텀 AI 칩의 필수 파트너 — 구글, 아마존 등이 자체 AI 칩 설계 시 마벨의 설계 자산을 활용</li>
+      <li>광통신 칩 시장 지배 — AI 데이터센터 내 초고속 데이터 전송의 핵심 기술 보유</li>
+      <li>AI 클러스터 확장의 직접 수혜 — AI 클러스터가 커질수록 마벨의 네트워킹 칩 수요는 기하급수적으로 증가</li>
+    </ul>
+    <div class="stock-info-grid">
+      <div class="info-block trend">
+        <div class="info-block-label">📊 주가 흐름</div>
+        <p>AI 반도체 슈퍼사이클 재점화와 함께 빅테크 커스텀 칩 수요 폭증으로 강한 상승 모멘텀 보유</p>
+      </div>
+      <div class="info-block timing">
+        <div class="info-block-label">⏰ 진입 타이밍</div>
+        <p>슈퍼사이클 재점화 초입 구간으로 지금이 중장기 분할 매수 적기. 큰 흐름에 베팅하는 전략이 유효</p>
+      </div>
+      <div class="info-block outlook">
+        <div class="info-block-label">🎯 전문가 전망</div>
+        <p>월가 애널리스트들의 목표 주가 상향 이어지고 있음. 광통신 기술력 기반 네트워킹 칩 지배력 강화 전망</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🟠 AI 전력 인프라 -->
+  <div class="sector-header">
+    <div class="sector-dot orange"></div>
+    <h2>AI 전력 인프라</h2>
+    <span class="sector-tag orange">Power Infrastructure</span>
+  </div>
+
+  <!-- 효성중공업 -->
+  <div class="stock-card">
+    <div class="stock-header">
+      <div>
+        <div class="stock-num">NO.03</div>
+        <div class="stock-name">효성중공업</div>
+        <div class="stock-ticker">Hyosung Heavy Industries · KOSPI</div>
+      </div>
+      <div class="price-badge">
+        <div class="price">4,398,000원</div>
+        <span class="change" style="font-size:11px;color:var(--text-muted);display:block;text-align:right;margin-top:3px;margin-bottom:2px">26.05.11 기준</span>
+        <span class="change" style="background:var(--accent-blue-light);color:var(--accent-blue)">▼ -4.41%</span>
+      </div>
+    </div>
+    <div class="stock-desc">
+      초고압 변압기 분야 세계적 강자. 전 세계 전력망 노후화와 AI 데이터센터 증설로 인한 '전기 부족 시대'의 대장주. 미국 현지 생산 거점 보유로 미국 자국 우선주의 정책의 직접 수혜를 받습니다.
+    </div>
+    <div class="points-title">💡 투자 포인트</div>
+    <ul class="points-list">
+      <li>미국 시장 잭팟 지속 — 노후 전력망 교체·신재생 에너지 연결 수요 폭발로 미국 법인 수주 역대급 기록 경신 중</li>
+      <li>765kV 초고압 변압기 독보적 경쟁력 — 기술적 진입장벽이 높은 특초고압 제품군에서 독보적 수주 점유율, 고마진 확보</li>
+      <li>건설 부문 턴어라운드 — 리스크 요인이던 건설 부문이 선별 수주로 수익성 회복, 전사 이익 체력 뒷받침</li>
+    </ul>
+    <div class="stock-info-grid">
+      <div class="info-block trend">
+        <div class="info-block-label">📊 주가 흐름</div>
+        <p>1분기 수주 대박·목표가 상향 리포트 겹치며 52주 신고가 경신. 거래량 실린 강력한 장대양봉 출현</p>
+      </div>
+      <div class="info-block timing">
+        <div class="info-block-label">⏰ 진입 타이밍</div>
+        <p>폭등일 무리한 추격 매수 금물. 420만~430만 원 지지 리테스트 시 분할 매수 대응 권장</p>
+      </div>
+      <div class="info-block outlook">
+        <div class="info-block-label">🎯 전문가 전망</div>
+        <p>목표 주가 470만 원 이상 제시. 수주 가이드라인 매번 초과 달성으로 실적 발표 때마다 주가 레벨업 기대</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 버티브 -->
+  <div class="stock-card">
+    <div class="stock-header">
+      <div>
+        <div class="stock-num">NO.04</div>
+        <div class="stock-name">버티브 홀딩스 🇺🇸</div>
+        <div class="stock-ticker">Vertiv Holdings · VRT · NYSE</div>
+      </div>
+      <div class="price-badge">
+        <div class="price">$339.85</div>
+        <span class="change" style="font-size:11px;color:var(--text-muted);display:block;text-align:right;margin-top:3px;margin-bottom:2px">26.05.11 기준</span>
+        <span class="change" style="background:var(--accent-blue-light);color:var(--accent-blue)">▼ -2.56%</span>
+      </div>
+    </div>
+    <div class="stock-desc">
+      데이터센터 전용 냉각 시스템 시장 점유율 글로벌 1위 기업. AI 서버가 발생시키는 엄청난 열을 식히는 액침냉각 솔루션의 최강자로, 엔비디아 차세대 칩(블랙웰 등)의 고열 문제를 해결하는 사실상 필수 파트너입니다.
+    </div>
+    <div class="points-title">💡 투자 포인트</div>
+    <ul class="points-list">
+      <li>엔비디아 블랙웰의 필수 파트너 — 차세대 AI 칩의 고열 문제를 해결할 수 있는 사실상 유일한 솔루션 보유</li>
+      <li>액침냉각 시장 선점 — 공기 냉각에서 액체 냉각으로 패러다임이 전환되는 시대의 압도적 1위</li>
+      <li>데이터센터 전력 소모의 40%가 냉각 비용 — 비용 절감 이슈 부각 시 버티브의 고효율 솔루션 수요 폭증</li>
+    </ul>
+    <div class="stock-info-grid">
+      <div class="info-block trend">
+        <div class="info-block-label">📊 주가 흐름</div>
+        <p>AI 데이터센터 증설 가속화와 함께 수주 잔고 역대 최고치 경신. 강한 상승 모멘텀 유지</p>
+      </div>
+      <div class="info-block timing">
+        <div class="info-block-label">⏰ 진입 타이밍</div>
+        <p>AI 데이터센터 증설 사이클 본격화 시점. 단기 조정 시마다 비중 높여가는 전략 유효</p>
+      </div>
+      <div class="info-block outlook">
+        <div class="info-block-label">🎯 전문가 전망</div>
+        <p>월가 목표 주가 지속 상향 중. 데이터센터 투자가 계속되는 한 버티브의 성장 스토리는 장기적으로 유효</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 🟢 원전 / SMR -->
+  <div class="sector-header">
+    <div class="sector-dot green"></div>
+    <h2>원전 / SMR</h2>
+    <span class="sector-tag green">Nuclear / SMR</span>
+  </div>
+
+  <!-- 비에이치아이 -->
+  <div class="stock-card">
+    <div class="stock-header">
+      <div>
+        <div class="stock-num">NO.05</div>
+        <div class="stock-name">비에이치아이 (BHI)</div>
+        <div class="stock-ticker">BHI · KOSPI</div>
+      </div>
+      <div class="price-badge">
+        <div class="price">94,700원</div>
+        <span class="change" style="font-size:11px;color:var(--text-muted);display:block;text-align:right;margin-top:3px;margin-bottom:2px">26.05.11 기준</span>
+        <span class="change">▲ +1.61%</span>
+      </div>
+    </div>
+    <div class="stock-desc">
+      발전소의 열 회수 장치(HRSG, 배열회수보일러) 분야 글로벌 챔피언. 웨스팅하우스와의 협력 관계 및 SMR용 핵심 보조기기 설계 역량으로 주목받는 알짜 실속주입니다.
+    </div>
+    <div class="points-title">💡 투자 포인트</div>
+    <ul class="points-list">
+      <li>HRSG 세계 1위 — 기술적 진입장벽이 높아 글로벌 경쟁사 대비 독보적 포지션 유지</li>
+      <li>SMR + LNG 발전 동시 수혜 — 웨스팅하우스 등 글로벌 선두권 기업과 전략적 협력으로 SMR 보조기기 시장 선점</li>
+      <li>대형 원전주보다 높은 탄력 — 시가총액이 상대적으로 작아 원전 테마 형성 시 폭발적인 주가 상승률 기대</li>
+    </ul>
+    <div class="stock-info-grid">
+      <div class="info-block trend">
+        <div class="info-block-label">📊 주가 흐름</div>
+        <p>글로벌 LNG 발전소 증설과 SMR 상용화 프로젝트 동시 진행. 대형 원전 수출 모멘텀까지 더해져 다중 성장 동력 가동 중</p>
+      </div>
+      <div class="info-block timing">
+        <div class="info-block-label">⏰ 진입 타이밍</div>
+        <p>SMR 상용화 프로젝트 본격화 시점. 수주 잔고와 영업이익률(OPM) 추이 확인하며 긴 호흡으로 접근 중요</p>
+      </div>
+      <div class="info-block outlook">
+        <div class="info-block-label">🎯 전문가 전망</div>
+        <p>LNG + SMR 동시 수혜 기대. 원전 르네상스 시대 핵심 수혜주로 장기 우상향 전망에 이견 없는 분위기</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── 꿀팁 ── -->
+<div class="section">
+  <div class="section-label">💡 투자 꿀팁</div>
+  <h2 class="section-title">스마트하게 투자하는 방법</h2>
+  <p class="section-desc">오르는 종목을 고르는 것만큼, 어떻게 투자하느냐도 중요합니다.</p>
+
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">📉</div>
+      <h3>분할 매수 전략</h3>
+      <p>급등일에 한꺼번에 매수하지 말고, 조정 구간마다 나눠서 매수하세요. 평단가를 낮추고 심리적 안정을 얻을 수 있습니다.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🔭</div>
+      <h3>긴 호흡으로 접근</h3>
+      <p>단기 뉴스에 일희일비하지 말고 수주 잔고, 영업이익률(OPM) 등 펀더멘털 지표를 정기적으로 모니터링하세요.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌐</div>
+      <h3>섹터 분산 투자</h3>
+      <p>반도체·전력·원전 세 가지 메가트렌드에 분산 투자해 특정 섹터 충격을 완화하고 안정적 수익을 추구하세요.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📋</div>
+      <h3>목표 주가 체크</h3>
+      <p>증권사 리포트의 목표 주가와 현재 주가 괴리율을 정기적으로 확인해 적정 매도 시점을 미리 계획하세요.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── 체크리스트 ── -->
+<div class="section">
+  <div class="section-label">✅ 투자 전 체크리스트</div>
+  <h2 class="section-title">매수 전 꼭 확인하세요</h2>
+  <p class="section-desc">투자 결정 전 아래 항목을 하나씩 점검해보세요.</p>
+
+  <div class="checklist">
+    <div class="checklist-title">📝 투자 전 점검 리스트</div>
+    <ul>
+      <li>
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <span>해당 종목의 최근 3개월 수주 현황 및 영업이익률(OPM) 추이를 확인했는가?</span>
+      </li>
+      <li>
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <span>현재 주가가 52주 신고가 부근인지, 아니면 눌림목(지지) 구간인지 확인했는가?</span>
+      </li>
+      <li>
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <span>증권사 목표 주가와 현재 주가의 괴리율(업사이드)이 충분한가? (최소 20% 이상 권장)</span>
+      </li>
+      <li>
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <span>분할 매수 계획을 세웠는가? (급등일 한꺼번에 매수 금지)</span>
+      </li>
+      <li>
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <span>전체 포트폴리오에서 해당 종목의 비중이 적절한가? (단일 종목 20% 초과 주의)</span>
+      </li>
+      <li>
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <span>손절 기준(Stop-loss)을 미리 정해두었는가?</span>
+      </li>
+      <li>
+        <div class="check-box" onclick="this.classList.toggle('checked')"></div>
+        <span>투자 기간과 목표 수익률을 명확히 정했는가? (단기 투기 vs 중장기 투자 구분)</span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── FAQ ── -->
+<div class="section">
+  <div class="section-label">❓ FAQ</div>
+  <h2 class="section-title">자주 묻는 질문</h2>
+  <p class="section-desc">투자자들이 가장 많이 궁금해하는 질문과 답변입니다.</p>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="q-text"><span class="q-badge">Q</span> 지금 당장 전부 매수해도 될까요?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        급등일에 몰아서 매수하는 것은 권장하지 않습니다. 특히 효성중공업처럼 +7% 폭등한 날은 추격 매수보다는 지지 구간을 기다려 분할 매수하는 전략이 안전합니다. 중장기 투자라면 목표 금액을 3~5회로 나눠 분할 매수하는 것이 리스크를 낮추는 핵심 전략입니다.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="q-text"><span class="q-badge">Q</span> 국내 종목과 미국 종목 중 어디에 집중해야 하나요?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        둘 다 각각의 장점이 있습니다. 국내 종목(심텍, 효성중공업, BHI)은 환율 리스크 없이 투자 가능하고 정보 접근이 쉬운 반면, 미국 종목(마벨, 버티브)은 글로벌 AI 슈퍼사이클의 직접 수혜를 더 강하게 받습니다. 환율·세금·수수료를 고려해 6:4 또는 7:3 비율로 국내외 분산 투자를 권장합니다.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="q-text"><span class="q-badge">Q</span> '12배 더 오른다'는 전망이 현실적인가요?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        이는 장기적·낙관적 시나리오의 최대 기대치입니다. 반도체·AI 전력·원전이라는 세 가지 메가트렌드가 동시에 진행되는 구간이기 때문에 상당한 업사이드가 존재하는 것은 사실이지만, 시장 변동성·환율·정책 리스크 등으로 실제 결과는 크게 다를 수 있습니다. 투자 시 이 점을 반드시 감안하세요.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="q-text"><span class="q-badge">Q</span> 손절 기준은 어떻게 잡아야 하나요?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        일반적으로 매수 단가 대비 -10%~-15% 선에서 손절 기준을 잡는 것이 일반적입니다. 중장기 투자라면 수주 잔고나 영업이익률이 구조적으로 악화되는 신호가 나올 때 비중 축소를 검토하는 것이 더 합리적입니다. 단순한 주가 하락보다는 펀더멘털 훼손 여부를 손절의 기준으로 삼으세요.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="q-text"><span class="q-badge">Q</span> SMR은 실제로 언제 상용화되나요?</span>
+        <span class="faq-arrow">▼</span>
+      </div>
+      <div class="faq-a">
+        현재 글로벌 주요 SMR 프로젝트들은 2030년대 초반 상용화를 목표로 진행 중입니다. 웨스팅하우스의 AP300, 뉴스케일파워 등이 대표적입니다. BHI는 이 선도 기업들과 협력 관계를 맺고 있어, 본격적인 수주는 2027~2028년부터 가시화될 가능성이 높습니다. 현재는 'SMR 테마 프리미엄'과 LNG 발전 수주가 동시에 주가를 지지하고 있는 구간입니다.
+      </div>
+    </div>
+  </div>
+
+  <!-- 면책 고지 -->
+  <div class="disclaimer">
+    <div class="disclaimer-icon">⚠️</div>
+    <div>
+      <strong>투자 유의사항</strong><br>
+      본 내용은 투자 참고용이며 특정 종목의 매수·매도를 권유하는 것이 아닙니다. 모든 투자의 책임은 투자자 본인에게 있으며, 실제 투자 시 전문가 상담 및 충분한 검토를 권장합니다. 과거의 주가 흐름이 미래의 수익을 보장하지 않습니다.
+    </div>
+  </div>
+
+  <div style="text-align:center">
+    <a href="#" class="back-top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+      ↑ 맨 위로 돌아가기
+    </a>
+  </div>
+</div>
+
+<!-- ② Instagram CTA (하단) -->
+<a href="https://www.instagram.com/startup_tip_" target="_blank" rel="noopener" class="insta-cta">
+  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="white" stroke-width="1.8"/>
+    <circle cx="12" cy="12" r="4.5" stroke="white" stroke-width="1.8"/>
+    <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+  </svg>
+  <span>더 많은 꿀정보 얻고 싶다면? &nbsp;@startup_tip_ &nbsp;▶</span>
+</a>
+
+<!-- ── Footer ── -->
+<footer>
+  <strong>코스피 7000 돌파 | 앞으로 12배 더 오를 주식 TOP 5</strong><br>
+  분석 기준일: 2026년 5월 11일 &nbsp;|&nbsp; 본 자료는 투자 참고용이며 투자 손익의 책임은 투자자 본인에게 있습니다.<br>
+  ⓒ 2026 startup_tip_ · All rights reserved
+</footer>
+
+<script>
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>
